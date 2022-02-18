@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  background: hsl(210, 36%, 96%);
+}
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+.joke {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px;
+    border-radius: 8px;
+}
+
+.joke.is-loading .joke-button {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.joke.is-loading .joke-button .loader {
+  display: block;
+}
+
+.joke.is-loading .joke-button span {
+  display: none;
+}
+
+.joke-heading {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-top: 30px;
+    text-align: center; 
+
+}
+
+.joke-button {
+    border: 0;
+    outline: none;
+    display: block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #20e3b2;
+    cursor: pointer;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    max-width: 214px;
+}
+
+.joke-img {
+  margin-bottom: 1rem;
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  border-left: 3px solid transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  animation: spin 1s infinite linear forwards;
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+
